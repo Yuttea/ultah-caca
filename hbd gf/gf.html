@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Caca 💗</title>
+<style>
+    body {
+        margin: 0;
+        background: #ffb6d9;
+        font-family: "Poppins", sans-serif;
+        overflow-x: hidden;
+        text-align: center;
+    }
+
+    h1 {
+        margin-top: 40px;
+        color: #ff1b7a;
+        font-size: 46px;
+        text-shadow: 0 0 10px white;
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    .foto-caca {
+        width: 260px;
+        height: 260px;
+        object-fit: cover;
+        border-radius: 30px;
+        border: 5px solid white;
+        box-shadow: 0 0 25px #ff007f;
+        animation: fadeIn 3s ease-in-out;
+        margin-top: 20px;
+    }
+
+    .pesan {
+        width: 85%;
+        margin: 25px auto;
+        font-size: 22px;
+        color: #ff007f;
+        background: #ffffffcc;
+        padding: 20px;
+        border-radius: 20px;
+        animation: fadeIn 3s ease-in-out;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 12px 25px;
+        border-radius: 20px;
+        border: none;
+        font-size: 22px;
+        color: white;
+        background: #ff007f;
+        cursor: pointer;
+        transition: .3s;
+    }
+
+    button:hover {
+        background: #ff2aac;
+    }
+
+    #loveNote {
+        display: none;
+        margin-top: 25px;
+        background: #ffffffdd;
+        padding: 20px;
+        width: 85%;
+        border-radius: 20px;
+        color: #ff007f;
+        font-size: 22px;
+    }
+
+    #terminal {
+        background: black;
+        color: #00ff80;
+        font-family: monospace;
+        width: 85%;
+        margin: 35px auto;
+        padding: 20px;
+        border-radius: 10px;
+        white-space: pre-wrap;
+        font-size: 18px;
+        display: none;
+    }
+
+    .heart {
+        position: absolute;
+        color: #ff007f;
+        font-size: 28px;
+        animation: fall linear infinite;
+        opacity: 0.85;
+    }
+    @keyframes fall {
+        0% {transform: translateY(-10vh);}
+        100% {transform: translateY(110vh);}
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity:1;}
+    }
+</style>
+</head>
+<body>
+
+<h1>🎉 Happy Birthday Caca 💗</h1>
+
+<img src= "caca.jpg" class="foto-caca">
+
+<div class="pesan">
+    Selamat ulang tahun yaa sayanggkuu cintaakuu maniskuu my babyy my honeyy 💕
+    Semoga panjang umur, tambah sayang & selalu cinta sama aku yaaa 💞
+    Kita pasti bisa lewati semua rintangan bersama 💖
+    Love youuuu ╰(*°▽°*)╯ 🎀
+</div>
+
+<h3 style="color:#9a005c;">Waktu kita sudah bersama 💞</h3>
+<h2 id="counter" style="color:#ff007f;"></h2>
+
+<button onclick="showLove()">Klik Disini Sayangku 💝</button>
+
+<div id="loveNote">
+    Kamu adalah rumah ternyaman aku 💗<br>
+    Aku bakal selalu jagain kamu 💞<br><br>
+    Kamu siap lihat sesuatu yang spesial lagi? 😳💖<br><br>
+    <button onclick="showTerminal()">Lanjut 😘</button>
+</div>
+
+<div id="terminal"></div>
+
+<!-- YouTube Musik Embed -->
+<iframe width="0" height="0" src="https://youtu.be/SdLfy2pqAQU?si=f2xfxZPI23i5U1Fu" frameborder="0"></iframe>
+
+<script>
+function showLove() {
+    document.getElementById("loveNote").style.display = "block";
+}
+
+function showTerminal() {
+    document.getElementById("terminal").style.display = "block";
+    typing();
+}
+
+const teks = `
+> run love_program.exe
+Loading data about: Caca 💗
+
+Happy Birthday Caca! 💗
+
+Aku selalu bersyukur punya kamu :) 💞
+
+I LOVE YOUUU 💝
+`;
+
+let i = 0;
+function typing(){
+    if(i < teks.length){
+        document.getElementById("terminal").innerHTML += teks.charAt(i);
+        i++;
+        setTimeout(typing, 45);
+    }
+}
+
+// Counter Tanggal Jadian (10 Juni)
+const start = new Date("Jun 10, 2025");
+setInterval(() => {
+    const now = new Date();
+    const selisih = now - start;
+
+    const hari = Math.floor(selisih / (1000*60*60*24));
+    counter.innerHTML = `${hari} Hari Bersama Kamu 💞`;
+}, 1000);
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerText = "💗";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 5000);
+}
+setInterval(createHeart, 200);
+</script>
+
+</body>
+</html>
